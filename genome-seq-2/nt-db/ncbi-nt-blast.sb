@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Copy/paste this job script into a text file and submit with the command:
+#    sbatch thefilename
+
+#SBATCH --time=12:00:00   # walltime limit (HH:MM:SS)
+#SBATCH --nodes=1   # number of nodes
+#SBATCH --ntasks-per-node=36   # 36 processor core(s) per node 
+#SBATCH --job-name="ref-soil"
+#SBATCH --mail-user=ngeerdes@iastate.edu   # email address
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+#SBATCH --output="slurm-nt-db-blast.out" # job standard output file (%j replaced by job id)
+
+# LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
+
+blastn -query ref-soil-filtered/PvR045-assembly-prokka.fasta.ffn.filtered.seq -db /work/adina/ngeerdes/databases/ncbi-nt/nt -out ncbi-nt-blast-out/PvR045-assembly-prokka.fasta.ffn.filtered.seq.ntout -outfmt 6 -num_threads 36
+
+blastn -query ref-soil-filtered/PvR061-assembly-prokka.fasta.ffn.filtered.seq -db /work/adina/ngeerdes/databases/ncbi-nt/nt -out ncbi-nt-blast-out/PvR061-assembly-prokka.fasta.ffn.filtered.seq.ntout -outfmt 6 -num_threads 36
+
+blastn -query ref-soil-filtered/PvR090-assembly-prokka.fasta.ffn.filtered.seq -db /work/adina/ngeerdes/databases/ncbi-nt/nt -out ncbi-nt-blast-out/PvR090-assembly-prokka.fasta.ffn.filtered.seq.ntout -outfmt 6  -num_threads 36
+
+blastn -query ref-soil-filtered/PvR096-assembly-prokka.fasta.ffn.filtered.seq -db /work/adina/ngeerdes/databases/ncbi-nt/nt -out ncbi-nt-blast-out/PvR096-assembly-prokka.fasta.ffn.filtered.seq.ntout -outfmt 6  -num_threads 36
+
+blastn -query ref-soil-filtered/PvR101-assembly-prokka.fasta.ffn.filtered.seq -db /work/adina/ngeerdes/databases/ncbi-nt/nt -out ncbi-nt-blast-out/PvR101-assembly-prokka.fasta.ffn.filtered.seq.ntout -outfmt 6  -num_threads 36
+
+blastn -query ref-soil-filtered/PvR102-assembly-prokka.fasta.ffn.filtered.seq -db /work/adina/ngeerdes/databases/ncbi-nt/nt -out ncbi-nt-blast-out/PvR102-assembly-prokka.fasta.ffn.filtered.seq.ntout -outfmt 6  -num_threads 36
+
+blastn -query ref-soil-filtered/PvR112-assembly-prokka.fasta.ffn.filtered.seq -db /work/adina/ngeerdes/databases/ncbi-nt/nt -out ncbi-nt-blast-out/PvR112-assembly-prokka.fasta.ffn.filtered.seq.ntout -outfmt 6  -num_threads 36
+
+blastn -query ref-soil-filtered/PvR115-assembly-prokka.fasta.ffn.filtered.seq -db /work/adina/ngeerdes/databases/ncbi-nt/nt -out ncbi-nt-blast-out/PvR115-assembly-prokka.fasta.ffn.filtered.seq.ntout -outfmt 6  -num_threads 36
+
+

@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Copy/paste this job script into a text file and submit with the command:
+#    sbatch thefilename
+
+#SBATCH --time=03:00:00   # walltime limit (HH:MM:SS)
+#SBATCH --nodes=1   # number of nodes
+#SBATCH --ntasks-per-node=36   # 36 processor core(s) per node 
+#SBATCH --job-name="ref-soil"
+#SBATCH --mail-user=ngeerdes@iastate.edu   # email address
+#SBATCH --mail-type=BEGIN
+#SBATCH --mail-type=END
+#SBATCH --mail-type=FAIL
+#SBATCH --output="slurm-ref-soil.out" # job standard output file (%j replaced by job id)
+
+# LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
+
+
+
+blastn -query PvR045-assembly-prokka/PvR045-assembly-prokka.fasta.ffn -db all-refsoil -out ref-soil-blast-out/PvR045-assembly-prokka.fasta.ffn.x.refsoil -outfmt 6
+
+blastn -query PvR061-assembly-prokka/PvR061-assembly-prokka.fasta.ffn -db all-refsoil -out ref-soil-blast-out/PvR061-assembly-prokka.fasta.ffn.x.refsoil -outfmt 6
+
+blastn -query PvR090-assembly-prokka/PvR090-assembly-prokka.fasta.ffn -db all-refsoil -out ref-soil-blast-out/PvR090-assembly-prokka.fasta.ffn.x.refsoil -outfmt 6 
+
+blastn -query PvR096-assembly-prokka/PvR096-assembly-prokka.fasta.ffn -db all-refsoil -out ref-soil-blast-out/PvR096-assembly-prokka.fasta.ffn.x.refsoil -outfmt 6
+
+blastn -query PvR101-assembly-prokka/PvR101-assembly-prokka.fasta.ffn -db all-refsoil -out ref-soil-blast-out/PvR101-assembly-prokka.fasta.ffn.x.refsoil -outfmt 6
+
+blastn -query PvR102-assembly-prokka/PvR102-assembly-prokka.fasta.ffn -db all-refsoil -out ref-soil-blast-out/PvR102-assembly-prokka.fasta.ffn.x.refsoil -outfmt 6
+
+blastn -query PvR112-assembly-prokka/PvR112-assembly-prokka.fasta.ffn -db all-refsoil -out ref-soil-blast-out/PvR112-assembly-prokka.fasta.ffn.x.refsoil -outfmt 6
+
+blastn -query PvR115-assembly-prokka/PvR115-assembly-prokka.fasta.ffn -db all-refsoil -out ref-soil-blast-out/PvR115-assembly-prokka.fasta.ffn.x.refsoil -outfmt 6

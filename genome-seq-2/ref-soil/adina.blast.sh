@@ -1,0 +1,12 @@
+blastn -query PvR021.assembly/PvR021.assembly.fasta.ffn -db all-refsoil.fna -out PvR021.assembly/PvR021.assembly.fasta.ffn.x.refsoil -outfmt 6
+blastn -query PvR045.reads/PvR045.reads.fasta.ffn -db all-refsoil.fna -out PvR045.reads/PvR045.reads.fasta.ffn.x.refsoil -outfmt 6
+blastn -query PvR061.assembly/PvR061.assembly.fasta.ffn -db all-refsoil.fna -out PvR061.assembly/PvR061.assembly.fasta.ffn.x.refsoil -outfmt 6
+blastn -query PvR079.assembly/PvR079.assembly.fasta.ffn -db all-refsoil.fna -out PvR079.assembly/PvR079.assembly.fasta.ffn.x.refsoil -outfmt 6
+blastn -query PvR083.assembly/PvR083.assembly.fasta.ffn -db all-refsoil.fna -out PvR083.assembly/PvR083.assembly.fasta.ffn.x.refsoil -outfmt 6
+blastn -query PvR090.assembly/PvR090.assembly.fasta.ffn -db all-refsoil.fna -out PvR090.assembly/PvR090.assembly.fasta.ffn.x.refsoil -outfmt 6
+blastn -query PvR101.reads/PvR101.reads.fasta.ffn -db all-refsoil.fna -out PvR101.reads/PvR101.reads.fasta.ffn.x.refsoil -outfmt 6
+blastn -query PvR102.reads/PvR102.reads.fasta.ffn -db all-refsoil.fna -out PvR102.reads/PvR102.reads.fasta.ffn.x.refsoil -outfmt 6
+blastn -query PvR115.reads/PvR115.reads.fasta.ffn -db all-refsoil.fna -out PvR115.reads/PvR115.reads.fasta.ffn.x.refsoil -outfmt 6
+blastn -query PvR119.assembly/PvR119.assembly.fasta.ffn -db all-refsoil.fna -out PvR119.assembly/PvR119.assembly.fasta.ffn.x.refsoil -outfmt 6
+blastn -query PvR122.assembly/PvR122.assembly.fasta.ffn -db all-refsoil.fna -out PvR122.assembly/PvR122.assembly.fasta.ffn.x.refsoil -outfmt 6
+blastn -query PvR147.assembly/PvR147.assembly.fasta.ffn -db all-refsoil.fna -out PvR147.assembly/PvR147.assembly.fasta.ffn.x.refsoil -outfmt 6

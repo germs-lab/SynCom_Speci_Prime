@@ -1,0 +1,12 @@
+prokka --outdir PvR021.assembly --prefix PvR021.assembly.fasta PvR021.assembly.fasta
+prokka --outdir PvR045.reads --prefix PvR045.reads.fasta PvR045.reads.fasta
+prokka --outdir PvR061.assembly --prefix PvR061.assembly.fasta PvR061.assembly.fasta
+prokka --outdir PvR079.assembly --prefix PvR079.assembly.fasta PvR079.assembly.fasta
+prokka --outdir PvR083.assembly --prefix PvR083.assembly.fasta PvR083.assembly.fasta
+prokka --outdir PvR090.assembly --prefix PvR090.assembly.fasta PvR090.assembly.fasta
+prokka --outdir PvR101.reads --prefix PvR101.reads.fasta PvR101.reads.fasta
+prokka --outdir PvR102.reads --prefix PvR102.reads.fasta PvR102.reads.fasta
+prokka --outdir PvR115.reads --prefix PvR115.reads.fasta PvR115.reads.fasta
+prokka --outdir PvR119.assembly --prefix PvR119.assembly.fasta PvR119.assembly.fasta
+prokka --outdir PvR122.assembly --prefix PvR122.assembly.fasta PvR122.assembly.fasta
+prokka --outdir PvR147.assembly --prefix PvR147.assembly.fasta PvR147.assembly.fasta
