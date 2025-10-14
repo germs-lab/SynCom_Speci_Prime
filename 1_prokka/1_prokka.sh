@@ -1,0 +1,1 @@
+prokka --outdir prokka-out --prefix PvR021 PvR021-assembly.fasta --force --addgenes

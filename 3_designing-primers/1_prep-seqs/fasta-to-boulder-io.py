@@ -7,7 +7,7 @@ def generate_primer3_input(input_fasta, output_file):
 PRIMER_OPT_SIZE=20
 PRIMER_MIN_SIZE= 20
 PRIMER_MAX_SIZE=20
-PRIMER_PRODUCT_SIZE_RANGE=100-300
+PRIMER_PRODUCT_SIZE_RANGE=100-200
 PRIMER_NUM_RETURN=10
 ="""
 
@@ -21,7 +21,7 @@ PRIMER_NUM_RETURN=10
 def main():
     # Check if correct number of arguments is provided
     if len(sys.argv) != 3:
-        print("Usage: python primer3_input_generator.py <input_fasta> <output_file>")
+        print("Usage: python fasta-to-boulder-io.py <input_fasta> <output_file>")
         sys.exit(1)
 
     # Get input and output file paths from command-line arguments
