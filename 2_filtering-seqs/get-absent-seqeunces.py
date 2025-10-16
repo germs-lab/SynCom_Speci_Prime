@@ -1,28 +1,23 @@
-from Bio import SeqIO # type: ignore
+from Bio import SeqIO
 import sys
 
-def filter_fasta(input_file, sequence_ids_to_keep):
-    # Read the input FASTA file
+def filter_fasta(input_file, sequence_ids_to_keep, output_file):
+    # Read all sequences from the input FASTA
     sequences = SeqIO.to_dict(SeqIO.parse(input_file, "fasta"))
     
-    filtered_list = []
-    # Filter sequences based on the provided list of sequence IDs
-    for each_seq in sequences:
-        if each_seq not in sequence_ids_to_keep:
-            filtered_list.append(each_seq)
+    # Keep sequences NOT in sequence_ids_to_keep
+    filtered_seqs = [seq for seq_id, seq in sequences.items() if seq_id not in sequence_ids_to_keep]
+    
+    # Write filtered sequences to output FASTA
+    SeqIO.write(filtered_seqs, output_file, "fasta")
 
-    # Write the filtered sequences to the output FASTA file
-    for seq_id in filtered_list:
-        print(f">{seq_id}")
-        print(sequences[seq_id].seq)
-
-# Example usage
+# --- Main ---
 fasta_input_file = sys.argv[1]
+blast_filtered_file = sys.argv[2]
+output_fasta_file = sys.argv[3]
 
-l = []
-for line in open(sys.argv[2], 'rU'):
-    l.append(line.rstrip().split('\t')[0])
+# Read sequence IDs to keep from BLAST filtered file
+sequence_ids_to_keep = [line.rstrip().split('\t')[0] for line in open(blast_filtered_file, 'r')]
 
-sequences_to_keep = l
-
-filter_fasta(fasta_input_file, sequences_to_keep)
+# Run filtering
+filter_fasta(fasta_input_file, sequence_ids_to_keep, output_fasta_file) # added output file as argument
