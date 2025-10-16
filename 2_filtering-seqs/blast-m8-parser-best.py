@@ -1,26 +1,25 @@
-# sys module to handle command-line arguments
 import sys
 
-# initiliaze an empty dict
-d = {}
+# Set e-value threshold
+threshold = 1e-5
 
-# opem the file provided as the first command line argument (these are the ref-soil blast results)
-for line in open(sys.argv[1]):
-    # split each line into fields using a tab as the delimiter
-    data = line.rstrip().split('\t')
-    # assign the first column as the query (our genome inputs)
-    query = data[0]
-    #assign the second column as a hit (database genes_)
-    hit = data[1]
-    # convert the second to last column (e-value) as a float number
-    evalue = float(data[-2])
+# Input and output files from command-line arguments
+input_file = sys.argv[1]
+output_file = sys.argv[2]
 
-    # check if the query already exists in the dictionary
-    if query in d:
-        continue # if query is already stored then skip this iteration
-    else:
-        # store the query and its corresponding hit in the dictionary 
-        d[query] = hit 
-        # if the e-value is less than or equal to the threshold (1e-5) then print the line
-        if evalue <= 1e-5:
-            print(line, end = '')
+# Dictionary to track first hit per query (optional)
+seen_queries = {}
+
+with open(input_file) as infile, open(output_file, 'w') as outfile:
+    for line in infile:
+        data = line.rstrip().split('\t')
+        query = data[0]
+        hit = data[1]
+        evalue = float(data[-2])  # second-to-last column
+
+        # Filter by e-value
+        if evalue <= threshold:
+            # Optional: only write the first hit per query
+            if query not in seen_queries:
+                outfile.write(line)
+                seen_queries[query] = hit
