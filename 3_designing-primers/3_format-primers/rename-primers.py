@@ -4,7 +4,7 @@ import sys
 
 def modify_fasta_headers(input_file, output_file): # input file is the output from parse-primer3-out i.e.  PvR045-parsed-primers.fasta, output is just .renamed
     # Extract the base name of the file (without the directory and extension)
-    file_name = os.path.basename(input_file).split("-")[0]
+    file_name = os.path.basename(input_file).split(".")[0]
     
     # Open the output file for writing
     with open(output_file, "w") as out_fasta:
